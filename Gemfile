@@ -39,8 +39,8 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 # Use Bootstrap
-gem "therubyracer"
-gem "less-rails"
+gem 'therubyracer'
+gem 'less-rails'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 # Use OmniAuth
