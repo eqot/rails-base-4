@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140917162115) do
+ActiveRecord::Schema.define(version: 20140920013153) do
+
+  create_table "problems", force: true do |t|
+    t.integer  "owner_id"
+    t.string   "title",       null: false
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "problems", ["owner_id"], name: "index_problems_on_owner_id"
 
   create_table "users", force: true do |t|
     t.string   "provider",   null: false
