@@ -1,0 +1,24 @@
+<div class="page-header">
+  <h2>
+    <%= @problem.title %>
+  </h2>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Submitter
+  </div>
+  <div class="panel-body">
+    <%= image_tag @problem.owner.image_url %>
+    <%= @problem.owner.nickname %>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Description
+  </div>
+  <div class="panel-body">
+    <%= @problem.description %>
+  </div>
+</div>
