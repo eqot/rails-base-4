@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :problems
+
   root to: 'home#index'
   get '/auth/:provvider/callback' => 'sessions#create'
   get '/logout' => 'sessions#destroy', as: :logout
