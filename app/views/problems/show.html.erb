@@ -22,3 +22,7 @@
     <%= @problem.description %>
   </div>
 </div>
+
+<% if @problem.submitted_by?(current_user) %>
+  <%= link_to 'Edit problem', edit_problem_path(@problem), class: 'btn btn-info' %>
+<% end %>
