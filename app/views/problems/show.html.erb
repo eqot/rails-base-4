@@ -25,4 +25,5 @@
 
 <% if @problem.submitted_by?(current_user) %>
   <%= link_to 'Edit problem', edit_problem_path(@problem), class: 'btn btn-info' %>
+  <%= link_to 'Delete problem', problem_path(@problem), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?'} %>
 <% end %>

@@ -32,6 +32,12 @@ class ProblemsController < ApplicationController
     end
   end
 
+  def destroy
+    @problem = current_user.submitted_problems.find(params[:id])
+    @problem.destroy!
+    redirect_to root_path, notice: 'Deleted'
+  end
+
   private
 
   def problem_params
