@@ -38,6 +38,13 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Use guard
+group :development do
+  gem 'guard'
+  gem 'guard-livereload', require: false
+  gem 'rack-livereload'
+end
+
 # Use Bootstrap
 gem 'therubyracer'
 gem 'less-rails'
