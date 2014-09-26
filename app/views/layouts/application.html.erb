@@ -24,7 +24,17 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to 'Submit problem', new_problem_path %></li>
+            <li>
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu0" data-toggle="dropdown">
+                  Submit
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu0">
+                  <li role="presentation"><%= link_to 'Problem', new_problem_path %></li>
+                </ul>
+              </div>
+            </li>
 
             <% if signed_in? %>
               <li>
