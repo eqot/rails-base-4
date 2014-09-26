@@ -29,7 +29,7 @@
             <% if signed_in? %>
               <li><%= link_to 'Sign out', logout_path %></li>
             <% else %>
-              <li><%= link_to 'Sign in to Google', '/auth/google_oauth2' %></li>
+              <li><%= link_to 'Sign in to Google', '/auth/google' %></li>
               <li><%= link_to 'Sign in to Twitter', '/auth/twitter' %></li>
             <% end %>
           </ul>

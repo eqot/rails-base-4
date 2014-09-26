@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
     uid = auth_hash[:uid]
 
     case provider
-    when 'google_oauth2'
+    when 'google'
       name = auth_hash[:info][:name]
       image_url = auth_hash[:info][:image]
     when 'twitter'
