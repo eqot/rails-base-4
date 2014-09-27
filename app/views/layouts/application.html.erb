@@ -57,9 +57,21 @@
                     <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                    <li role="presentation"><%= link_to 'Google', '/auth/google' %></li>
-                    <li role="presentation"><%= link_to 'GitHub', '/auth/github' %></li>
-                    <li role="presentation"><%= link_to 'Twitter', '/auth/twitter' %></li>
+                    <li role="presentation">
+                      <%= link_to('/auth/google') do %>
+                        <i class="fa fa-google-plus"></i> Google
+                      <% end %>
+                    </li>
+                    <li role="presentation">
+                      <%= link_to('/auth/github') do %>
+                        <i class="fa fa-github"></i> GitHub
+                      <% end %>
+                    </li>
+                    <li role="presentation">
+                      <%= link_to('/auth/twitter') do %>
+                        <i class="fa fa-twitter"></i> Twitter
+                      <% end %>
+                    </li>
                   </ul>
                 </div>
               </li>
