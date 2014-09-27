@@ -55,3 +55,6 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-github'
 gem 'omniauth-twitter'
+
+# Use Font Awesome
+gem 'font-awesome-less'

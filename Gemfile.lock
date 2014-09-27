@@ -59,6 +59,8 @@ GEM
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.5)
+    font-awesome-less (4.0.2)
+      less-rails (>= 2.4.2)
     formatador (0.2.5)
     guard (2.6.1)
       formatador (>= 0.2.4)
@@ -202,6 +204,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  font-awesome-less
   guard
   guard-livereload
   jbuilder (~> 2.0)
