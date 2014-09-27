@@ -53,4 +53,22 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 # Use OmniAuth
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-github'
 gem 'omniauth-twitter'
+
+# Use Font Awesome
+gem 'font-awesome-less'
+
+group :development, :test do
+  # Use Pry
+  gem 'pry-rails'
+  gem 'pry-byebug'
+
+  # User Hirb
+  gem 'hirb'
+  gem 'hirb-unicode'
+
+  # Use better_errors and binding_of_caller
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
