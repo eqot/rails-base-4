@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20140920013153) do
   create_table "users", force: true do |t|
     t.string   "provider",   null: false
     t.string   "uid",        null: false
-    t.string   "nickname",   null: false
+    t.string   "name",       null: false
     t.string   "image_url",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"

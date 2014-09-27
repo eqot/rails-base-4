@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
     end
 
     User.find_or_create_by(provider: provider, uid: uid) do |user|
-      user.nickname = name
+      user.name = name
       user.image_url = image_url
     end
   end
