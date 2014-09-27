@@ -53,4 +53,5 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 # Use OmniAuth
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-github'
 gem 'omniauth-twitter'

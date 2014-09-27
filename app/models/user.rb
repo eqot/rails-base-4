@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
     when 'google'
       name = auth_hash[:info][:name]
       image_url = auth_hash[:info][:image]
+    when 'github'
+      name = auth_hash[:info][:nickname]
+      image_url = auth_hash[:info][:image]
     when 'twitter'
       name = auth_hash[:info][:nickname]
       image_url = auth_hash[:info][:image]
