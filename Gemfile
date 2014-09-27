@@ -58,3 +58,9 @@ gem 'omniauth-twitter'
 
 # Use Font Awesome
 gem 'font-awesome-less'
+
+group :development, :test do
+  # Use Pry
+  gem 'pry-rails'
+  gem 'pry-byebug'
+end
