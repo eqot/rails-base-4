@@ -5,4 +5,9 @@
 .navbar-nav .dropdown {
   margin-top: 8px;
   margin-left: 6px;
+
+  & img {
+    width: 18px;
+    margin-right: 4px;
+  }
 }
