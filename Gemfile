@@ -67,4 +67,8 @@ group :development, :test do
   # User Hirb
   gem 'hirb'
   gem 'hirb-unicode'
+
+  # Use better_errors and binding_of_caller
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
