@@ -80,6 +80,10 @@ GEM
       multi_json (~> 1.8)
     hashie (3.3.1)
     hike (1.2.3)
+    hirb (0.7.2)
+    hirb-unicode (0.0.5)
+      hirb (~> 0.5)
+      unicode-display_width (~> 0.1.1)
     hitimes (1.2.2)
     http_parser.rb (0.6.0)
     i18n (0.6.11)
@@ -209,6 +213,7 @@ GEM
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unicode-display_width (0.1.1)
 
 PLATFORMS
   ruby
@@ -218,6 +223,8 @@ DEPENDENCIES
   font-awesome-less
   guard
   guard-livereload
+  hirb
+  hirb-unicode
   jbuilder (~> 2.0)
   jquery-rails
   less-rails
