@@ -59,6 +59,9 @@ gem 'omniauth-twitter'
 # Use Font Awesome
 gem 'font-awesome-less'
 
+# Use Redcarpet
+gem 'redcarpet'
+
 group :development, :test do
   # Use Pry
   gem 'pry-rails'
