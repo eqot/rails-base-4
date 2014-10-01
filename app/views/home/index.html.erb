@@ -8,9 +8,16 @@
       <h4 class="list-group-item-heading">
         <%= problem.title %>
       </h4>
-      <p class="list-group-imtem-text">
-        <%= problem.description %>
-      </p>
+
+      <div class="list-group-item-text clearfix">
+        <%= markdown_to_text(problem.description) %>
+
+        <div class="pull-right">
+          <%= problem.created_at %>
+          <%= image_tag problem.owner.image_url %>
+          <%= problem.owner.name %>
+        </div>
+      </div>
     <% end %>
   <% end %>
 </div>

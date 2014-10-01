@@ -62,6 +62,9 @@ gem 'font-awesome-less'
 # Use Redcarpet
 gem 'redcarpet'
 
+# Use Nokogiri
+gem 'nokogiri'
+
 group :development, :test do
   # Use Pry
   gem 'pry-rails'
