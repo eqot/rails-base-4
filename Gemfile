@@ -65,6 +65,9 @@ gem 'redcarpet'
 # Use Nokogiri
 gem 'nokogiri'
 
+# Use Grape
+gem 'grape'
+
 group :development, :test do
   # Use Pry
   gem 'pry-rails'
