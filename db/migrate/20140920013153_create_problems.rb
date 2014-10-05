@@ -3,7 +3,7 @@ class CreateProblems < ActiveRecord::Migration
     create_table :problems do |t|
       t.integer :owner_id
       t.string :title,       null: false
-      t.string :description
+      t.text :description
 
       t.timestamps
     end

@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20140920013153) do
   create_table "problems", force: true do |t|
     t.integer  "owner_id"
     t.string   "title",       null: false
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
