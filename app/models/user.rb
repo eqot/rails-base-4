@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   validates :uid, presence: true
   validates :uid, uniqueness: { scope: :provider }
   validates :name, presence: true
+  validates :image_url, presence: true
 
   has_many :submitted_problems, class_name: 'Problem', foreign_key: :owner_id
 

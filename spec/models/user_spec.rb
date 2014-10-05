@@ -2,11 +2,12 @@ require "rails_helper"
 
 describe User do
 
-  it "is valid with provider, uid, name" do
+  it "is valid with provider, uid, name, image_url" do
     user = User.new(
       provider: "Provider",
       uid: "Uid",
-      name: "Name"
+      name: "Name",
+      image_url: "Image url"
     )
     expect(user).to be_valid
   end
@@ -21,6 +22,10 @@ describe User do
 
   it "is invalid without a name" do
     expect(User.new(name: nil)).to have(1).errors_on(:name)
+  end
+
+  it "is invalid without an image url" do
+    expect(User.new(image_url: nil)).to have(1).errors_on(:image_url)
   end
 
   it "is invalid with a duplicate provider and uid" do
