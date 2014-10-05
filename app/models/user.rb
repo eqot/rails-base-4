@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 
   validates :provider, presence: true
   validates :uid, presence: true
+  validates :uid, uniqueness: { scope: :provider }
   validates :name, presence: true
 
   has_many :submitted_problems, class_name: 'Problem', foreign_key: :owner_id
