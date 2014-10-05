@@ -87,6 +87,11 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rspec-collection_matchers'
   gem 'factory_girl_rails'
+
+  gem 'guard-rspec'
+  gem 'spring-commands-rspec'
+  gem 'rb-fsevent' if `uname` =~ /Darwin/
+  gem 'terminal-notifier-guard' if `uname` =~ /Darwin/
 end
 
 group :test do
