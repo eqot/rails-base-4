@@ -1,8 +1,7 @@
 class User < ActiveRecord::Base
 
   validates :provider, presence: true
-  validates :uid, presence: true
-  validates :uid, uniqueness: { scope: :provider }
+  validates :uid, presence: true, uniqueness: { scope: :provider }
   validates :name, presence: true
   validates :image_url, presence: true
 
