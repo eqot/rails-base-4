@@ -4,16 +4,10 @@ module Markdown
     format :txt
     prefix :api
 
-    helpers do
-      def markdown(text)
-        Downr::Markdown.render(text).html_safe
-      end
-    end
-
     resource :markdown do
       desc "Convert markdown into html"
       post do
-        return markdown(params[:content])
+        return Markdown.to_html(params[:content])
       end
     end
   end

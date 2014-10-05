@@ -1,12 +1,13 @@
+require 'markdown'
+
 module ApplicationHelper
 
   def markdown(text)
-    Downr::Markdown.render(text).html_safe
+    Markdown.to_html(text)
   end
 
   def markdown_to_text(text)
-    html = markdown(text)
-    Nokogiri::HTML(html).text
+    Markdown.to_text(text)
   end
 
 end
