@@ -19,7 +19,7 @@
     Description
   </div>
   <div class="panel-body">
-    <%= markdown(@problem.description) %>
+    <%= Markdown.to_html(@problem.description) %>
   </div>
 </div>
 

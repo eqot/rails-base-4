@@ -10,7 +10,7 @@
       </h4>
 
       <div class="list-group-item-text clearfix">
-        <%= markdown_to_text(problem.description) %>
+        <%= Markdown.to_text(problem.description) %>
 
         <div class="pull-right">
           <%= problem.created_at %>
