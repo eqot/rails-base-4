@@ -59,8 +59,8 @@ gem 'omniauth-twitter'
 # Use Font Awesome
 gem 'font-awesome-less'
 
-# Use Redcarpet
-gem 'redcarpet'
+# Use Downr instead of Redcarpet
+gem 'downr'
 
 # Use Nokogiri
 gem 'nokogiri'
