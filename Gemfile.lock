@@ -249,6 +249,8 @@ GEM
       json (~> 1.4)
     redcarpet (3.1.2)
     ref (1.0.5)
+    rspec-collection_matchers (1.0.0)
+      rspec-expectations (>= 2.99.0.beta1)
     rspec-core (3.1.5)
       rspec-support (~> 3.1.0)
     rspec-expectations (3.1.2)
@@ -352,6 +354,7 @@ DEPENDENCIES
   pry-rails
   rack-livereload
   rails (= 4.1.6)
+  rspec-collection_matchers
   rspec-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
