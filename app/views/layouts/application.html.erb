@@ -10,76 +10,7 @@
   </head>
 
   <body>
-    <header class="navbar navbar-default" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <%= link_to 'probless', root_path, class: 'navbar-brand' %>
-        </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu0" data-toggle="dropdown">
-                  Submit
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu0">
-                  <li role="presentation"><%= link_to 'Problem', new_problem_path %></li>
-                </ul>
-              </div>
-            </li>
-
-            <% if signed_in? %>
-              <li>
-                <div class="dropdown">
-                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                    <%= image_tag current_user.image_url %>
-                    <%= current_user.name %>
-                    <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                    <li role="presentation"><%= link_to 'Sign out', logout_path %></li>
-                  </ul>
-                </div>
-              </li>
-            <% else %>
-              <li>
-                <div class="dropdown">
-                  <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                    Sign in
-                    <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                    <li role="presentation">
-                      <%= link_to('/auth/google') do %>
-                        <i class="fa fa-google-plus"></i> Google
-                      <% end %>
-                    </li>
-                    <li role="presentation">
-                      <%= link_to('/auth/github') do %>
-                        <i class="fa fa-github"></i> GitHub
-                      <% end %>
-                    </li>
-                    <li role="presentation">
-                      <%= link_to('/auth/twitter') do %>
-                        <i class="fa fa-twitter"></i> Twitter
-                      <% end %>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </header>
+    <%= render partial: 'layouts/header' %>
 
     <div class="container">
       <% if flash[:notice] %>
@@ -96,5 +27,7 @@
 
       <%= yield %>
     </div>
+
+    <%= render partial: 'layouts/footer' %>
   </body>
 </html>

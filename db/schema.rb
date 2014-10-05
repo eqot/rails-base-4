@@ -16,12 +16,12 @@ ActiveRecord::Schema.define(version: 20140920013153) do
   create_table "problems", force: true do |t|
     t.integer  "owner_id"
     t.string   "title",       null: false
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "problems", ["owner_id"], name: "index_problems_on_owner_id"
+  add_index "problems", ["owner_id"], name: "index_problems_on_owner_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "provider",   null: false
@@ -32,6 +32,6 @@ ActiveRecord::Schema.define(version: 20140920013153) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true
+  add_index "users", ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true, using: :btree
 
 end
