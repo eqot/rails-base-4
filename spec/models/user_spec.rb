@@ -27,8 +27,8 @@ describe User do
   end
 
   it "is invalid with a duplicate provider and uid" do
-    create(:user)
-    user = build(:user)
+    create(:user, provider: "Provider", uid: "1234")
+    user = build(:user, provider: "Provider", uid: "1234")
     expect(user).to have(1).errors_on(:uid)
   end
 
