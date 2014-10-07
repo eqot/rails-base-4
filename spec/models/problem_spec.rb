@@ -12,9 +12,16 @@ describe Problem do
   end
 
   it "checks if valid user is submitted" do
-    user = build(:user)
-    problem = build(:problem, owner_id: user)
-    problem.submitted_by?(user).should be_truthy
+    user = create(:user)
+    problem = build(:problem, owner_id: user.id)
+    expect(problem.submitted_by?(user)).to be_truthy
+  end
+
+  it "checks if invalid user is not submitted" do
+    user = create(:user)
+    user2 = create(:user)
+    problem = build(:problem, owner_id: user.id)
+    expect(problem.submitted_by?(user2)).to be_falsey
   end
 
 end
