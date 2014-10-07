@@ -3,6 +3,7 @@ class Problem < ActiveRecord::Base
   belongs_to :owner, class_name: 'User'
 
   validates :title, presence: true
+  validates :owner_id, presence: true
 
   def submitted_by?(user)
     return false unless user
