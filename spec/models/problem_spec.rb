@@ -11,17 +11,22 @@ describe Problem do
     expect(problem).to have(1).errors_on(:title)
   end
 
-  it "checks if valid user is submitted" do
-    user = create(:user)
-    problem = build(:problem, owner_id: user.id)
-    expect(problem.submitted_by?(user)).to be_truthy
-  end
+  describe "checks its owner" do
 
-  it "checks if invalid user is not submitted" do
-    user = create(:user)
-    user2 = create(:user)
-    problem = build(:problem, owner_id: user.id)
-    expect(problem.submitted_by?(user2)).to be_falsey
+    before :each do
+      @user = create(:user)
+      @problem = build(:problem, owner_id: @user.id)
+    end
+
+    it "with correct user" do
+      expect(@problem.submitted_by?(@user)).to be_truthy
+    end
+
+    it "with incorrect user" do
+      incorrect_user = create(:user)
+      expect(@problem.submitted_by?(incorrect_user)).to be_falsey
+    end
+
   end
 
 end
