@@ -2,6 +2,10 @@ class ProblemsController < ApplicationController
 
   # before_action :authenticate
 
+  def index
+    @problems = Problem.all
+  end
+
   def new
     @problem = current_user.submitted_problems.build
   end
