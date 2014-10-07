@@ -11,10 +11,10 @@ describe Problem do
     expect(problem).to have(1).errors_on(:title)
   end
 
-  # it "is invalid without an owner id" do
-  #   problem = build(:problem, owner_id: nil)
-  #   expect(problem).to have(1).errors_on(:owner_id)
-  # end
+  it "is invalid without an owner id" do
+    problem = build(:invalid_problem)
+    expect(problem).to have(1).errors_on(:owner_id)
+  end
 
   describe "checks its owner" do
 

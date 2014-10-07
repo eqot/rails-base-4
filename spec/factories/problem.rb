@@ -9,5 +9,11 @@ FactoryGirl.define do
     after(:build) do |problem|
       problem.owner_id ||= create(:user).id
     end
+
+    factory :invalid_problem do
+      after(:build) do |problem|
+        problem.owner_id = nil
+      end
+    end
   end
 end
