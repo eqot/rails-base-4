@@ -1,6 +1,6 @@
 class ProblemsController < ApplicationController
 
-  # before_action :authenticate
+  before_action :authenticate
 
   def index
     @problems = Problem.all
