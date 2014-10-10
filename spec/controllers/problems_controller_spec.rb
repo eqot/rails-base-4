@@ -56,6 +56,38 @@ describe ProblemsController do
 
     end
 
+    # context "with invalid attributes" do
+    #
+    #   it "does not save the new problem in the database" do
+    #     expect {
+    #       post :create, problem: attributes_for(:invalid_problem)
+    #     }.to_not change(Problem, :count)
+    #   end
+    #
+    # end
+
+  end
+
+  describe "PATCH #update" do
+
+    before :each do
+      @problem = create(:problem, owner_id: 123)
+    end
+
+    context "valid attributes" do
+
+      # it "locates the requested @problem" do
+      #   patch :update, id: @problem, problem: attributes_for(:problem)
+      #   expect(assigns(:problem)).to eq(@problem)
+      # end
+
+      # it "redirects to problems#show" do
+      #   post :create, problem: attributes_for(:problem)
+      #   expect(response).to redirect_to problem_path(assigns[:problem])
+      # end
+
+    end
+
   end
 
 end
