@@ -1,0 +1,15 @@
+<%= link_to(problem, class: 'list-group-item') do %>
+  <h4 class="list-group-item-heading">
+    <%= problem.title %>
+  </h4>
+
+  <div class="list-group-item-text clearfix">
+    <%= Markdown.to_text(problem.description) %>
+
+    <div class="pull-right">
+      <%= problem.created_at %>
+      <%= image_tag problem.owner_image_url %>
+      <%= problem.owner_name %>
+    </div>
+  </div>
+<% end %>

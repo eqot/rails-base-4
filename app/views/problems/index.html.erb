@@ -3,21 +3,5 @@
 </div>
 
 <div class="list-group">
-  <% @problems.each do |problem| %>
-    <%= link_to(problem, class: 'list-group-item') do %>
-      <h4 class="list-group-item-heading">
-        <%= problem.title %>
-      </h4>
-
-      <div class="list-group-item-text clearfix">
-        <%= Markdown.to_text(problem.description) %>
-
-        <div class="pull-right">
-          <%= problem.created_at %>
-          <%= image_tag problem.owner.image_url %>
-          <%= problem.owner.name %>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
+  <%= render @problems %>
 </div>
