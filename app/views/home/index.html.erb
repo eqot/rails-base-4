@@ -3,7 +3,5 @@
 </div>
 
 <div class="list-group">
-  <% @problems.each do |problem| %>
-    <%= render partial: 'problems/item', locals: { problem: problem } %>
-  <% end %>
+  <%= render @problems %>
 </div>
