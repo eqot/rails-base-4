@@ -46,7 +46,7 @@ def make_relationships
 
   relating_problems.each do |relating_problem|
     related_problems.each do |related_problem|
-      relating_problem.relate!(related_problem)
+      related_problem.relate!(relating_problem)
     end
   end
 end

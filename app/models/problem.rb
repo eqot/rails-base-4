@@ -1,9 +1,10 @@
 class Problem < ActiveRecord::Base
 
   has_many :relationships, foreign_key: "relating_id"
+  has_many :related_problems, through: :relationships, source: :related
+
   has_many :reverse_relationships, foreign_key: "related_id", class_name: "Relationship"
-  has_many :relating_problems, through: :relationships, source: :relating
-  has_many :related_problems, through: :reverse_relationships, source: :related
+  has_many :relating_problems, through: :reverse_relationships, source: :relating
 
   belongs_to :owner, class_name: 'User'
   delegate :name, :image_url, to: :owner, prefix: true
