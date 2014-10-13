@@ -27,3 +27,17 @@
   <%= link_to 'Edit problem', edit_problem_path(@problem), class: 'btn btn-info' %>
   <%= link_to 'Delete problem', problem_path(@problem), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?'} %>
 <% end %>
+
+
+<br><br>
+<hr>
+<h3>
+  Related problems
+</h3>
+
+<div class="list-group">
+  <% @problem.relating_problems.each do |relating_problem| %>
+    <!-- <%= render partial: "problem", locals: { problem: relating_problem } %> -->
+    <%= render "problem", problem: relating_problem %>
+  <% end %>
+</div>
