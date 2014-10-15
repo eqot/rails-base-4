@@ -1,0 +1,9 @@
+.panel.panel-info
+  .panel-heading
+    - if sortable
+      .trash.connectedSortable.pull-right
+        | Trash
+    h4 Interesting problems
+
+  .list-group class=(sortable ? 'list-sortable connectedSortable' : '')
+    = render @problems

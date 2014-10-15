@@ -5,11 +5,4 @@
 
 br
 
-.panel.panel-info
-  .panel-heading
-    .trash.connectedSortable.pull-right
-      | Trash
-    h4 Interesting problems
-
-  .list-group.list-sortable.connectedSortable
-    = render @problems
+= render "users/problems", sortable: true

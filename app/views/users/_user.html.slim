@@ -1,9 +1,1 @@
-.user-info
-  => image_tag current_user.image_url
-  = current_user.name
-
-.problems
-  h3 Interesting problems
-
-  .list-group
-    = render @problems
+= render "users/problems", sortable: false
