@@ -1,8 +1,13 @@
-.page-header.clearfix
-  h1 Problems
+- if signed_in?
 
-  .pull-right
-    = link_to "See all problems", problems_path, class: "btn btn-default"
+  = render "users/user"
 
-.list-group
-  = render @problems
+- else
+  .page-header.clearfix
+    h1 Problems
+
+    .pull-right
+      = link_to "See all problems", problems_path, class: "btn btn-default"
+
+    .list-group
+      = render @problems
