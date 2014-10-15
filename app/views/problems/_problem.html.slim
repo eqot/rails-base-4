@@ -1,12 +1,11 @@
-.list-item(data = { model_name: problem.class.name.underscore, update_url: problem_sort_path(problem) })
-  = link_to(problem, class: "list-group-item")
-    h4.list-group-item-heading
-      = problem.title
+= link_to(problem, class: "list-group-item list-item", data: { model_name: problem.class.name.underscore, update_url: problem_sort_path(problem) })
+  h4.list-group-item-heading
+    = problem.title
 
-    .list-group-item-text.clearfix
-      = Markdown.to_text(problem.description)
+  .list-group-item-text.clearfix
+    = Markdown.to_text(problem.description)
 
-      .pull-right
-        = problem.created_at
-        = image_tag problem.owner_image_url
-        = problem.owner_name
+    .pull-right
+      = problem.created_at
+      = image_tag problem.owner_image_url
+      = problem.owner_name
