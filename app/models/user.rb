@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
 
   has_many :submitted_problems, class_name: 'Problem', foreign_key: :owner_id
 
+  has_many :like_problems
+  has_many :problems, through: :like_problems
+
   def self.find_or_create_from_auth_hash(auth_hash)
     provider = auth_hash[:provider]
     uid = auth_hash[:uid]
@@ -27,6 +30,10 @@ class User < ActiveRecord::Base
       user.name = name
       user.image_url = image_url
     end
+  end
+
+  def like!(problem)
+    like_problems.create!(problem_id: problem.id)
   end
 
 end

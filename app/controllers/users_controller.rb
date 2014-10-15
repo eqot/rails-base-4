@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @problems = Problem.all
+    @problems = @user.problems
   end
 
 end

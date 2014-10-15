@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141013081202) do
+ActiveRecord::Schema.define(version: 20141015082620) do
+
+  create_table "like_problems", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "problem_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "like_problems", ["problem_id"], name: "index_like_problems_on_problem_id", using: :btree
+  add_index "like_problems", ["user_id", "problem_id"], name: "index_like_problems_on_user_id_and_problem_id", unique: true, using: :btree
+  add_index "like_problems", ["user_id"], name: "index_like_problems_on_user_id", using: :btree
 
   create_table "problems", force: true do |t|
     t.integer  "owner_id"
