@@ -2,8 +2,11 @@
   => image_tag current_user.image_url
   = current_user.name
 
-.problems
-  h3 Interesting problems
+br
+
+.panel.panel-info
+  .panel-heading
+    h4 Interesting problems
 
   .list-group.list-sortable
     = render @problems
