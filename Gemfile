@@ -55,16 +55,13 @@ end
 # Use Bootstrap
 gem 'therubyracer'
 gem 'less-rails'
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'twitter-bootstrap-rails'
 
 # Use OmniAuth
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-github'
 gem 'omniauth-twitter'
-
-# Use Font Awesome
-gem 'font-awesome-less'
 
 # Use Downr instead of Redcarpet
 gem 'downr'
