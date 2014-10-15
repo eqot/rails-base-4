@@ -36,4 +36,8 @@ class User < ActiveRecord::Base
     like_problems.create!(problem_id: problem.id)
   end
 
+  def unlike!(problem)
+    like_problems.find_by(problem_id: problem.id).destroy
+  end
+
 end

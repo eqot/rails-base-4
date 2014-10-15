@@ -6,6 +6,7 @@ enableSort = ->
   $('.list-sortable').sortable
     axis: 'y'
     items: '.list-item'
+    connectWith: '.connectedSortable'
 
     update: (e, ui) ->
       item = ui.item
@@ -15,6 +16,24 @@ enableSort = ->
       $.ajax
         type: 'POST'
         url: item_data.updateUrl
+        dataType: 'json'
+        data: params
+
+  $('.trash').sortable
+    axis: 'y'
+    items: '.list-item'
+    connectWith: '.connectedSortable'
+
+    update: (e, ui) ->
+      ui.item.remove()
+
+      item = ui.item
+      item_data = item.data()
+      params = { _method: 'delete' }
+      params[item_data.modelName] = { row_order_position: item.index() }
+      $.ajax
+        type: 'POST'
+        url: item_data.deleteUrl
         dataType: 'json'
         data: params
 

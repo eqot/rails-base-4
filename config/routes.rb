@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :problems
   resources :problems do
     put :sort
+    delete :unlike
   end
 
   resources :users, only: :show

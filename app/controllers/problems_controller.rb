@@ -48,6 +48,12 @@ class ProblemsController < ApplicationController
     render nothing: true
   end
 
+  def unlike
+    problem = Problem.find(params[:problem_id])
+    current_user.unlike!(problem)
+    render nothing: true
+  end
+
   private
 
   def problem_params

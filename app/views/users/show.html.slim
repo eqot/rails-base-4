@@ -2,11 +2,14 @@
   => image_tag current_user.image_url
   = current_user.name
 
+
 br
 
 .panel.panel-info
   .panel-heading
+    .trash.connectedSortable.pull-right
+      | Trash
     h4 Interesting problems
 
-  .list-group.list-sortable
+  .list-group.list-sortable.connectedSortable
     = render @problems

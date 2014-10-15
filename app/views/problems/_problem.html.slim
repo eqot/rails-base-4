@@ -1,4 +1,4 @@
-= link_to(problem, class: "list-group-item list-item", data: { model_name: problem.class.name.underscore, update_url: problem_sort_path(problem) })
+= link_to(problem, class: "list-group-item list-item", data: { model_name: problem.class.name.underscore, update_url: problem_sort_path(problem), delete_url: problem_unlike_path(problem) })
   h4.list-group-item-heading
     = problem.title
 
