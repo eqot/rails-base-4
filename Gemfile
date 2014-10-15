@@ -38,6 +38,9 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Use Slim
+gem 'slim-rails'
+
 # Use guard
 group :development do
   gem 'guard'

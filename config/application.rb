@@ -34,6 +34,9 @@ module RailsBase4
     config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
     config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
 
+    # Use Slim as a template engine
+    config.generators.template_engine = :slim
+
     config.generators do |g|
       g.test_framework :rspec,
         fixtures: true,
