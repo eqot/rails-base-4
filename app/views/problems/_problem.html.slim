@@ -1,0 +1,14 @@
+= link_to(problem, class: "list-group-item list-item", data: { model_name: problem.class.name.underscore, update_url: problem_sort_path(problem), delete_url: problem_unlike_path(problem) })
+  h4.list-group-item-heading
+    = problem.title
+
+  .list-group-item-text.clearfix
+    = Markdown.to_text(problem.description)
+
+    .pull-right
+      => problem.created_at
+      => image_tag problem.owner_image_url
+      = problem.owner_name
+
+    p
+      = problem.users.count

@@ -34,6 +34,12 @@ def make_problems
       owner_id: user.id
     )
   end
+
+  problems = Problem.all
+  like_problems = problems[0..4]
+  like_problems.each do |like_problem|
+    user.like!(like_problem)
+  end
 end
 
 def make_relationships
