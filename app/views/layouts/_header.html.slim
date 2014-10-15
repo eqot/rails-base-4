@@ -28,6 +28,9 @@ header.navbar.navbar-default role="navigation"
                 span.caret<
               ul.dropdown-menu role="menu" aria-labelledby="dropdownMenu1"
                 li role="presentation"
+                  = link_to "User info", user_path(current_user.id)
+                li.divider role="presentation"
+                li role="presentation"
                   = link_to "Sign out", logout_path
         - else
           li
