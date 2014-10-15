@@ -5,3 +5,9 @@
 .form-group textarea {
   margin-top: 8px;
 }
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

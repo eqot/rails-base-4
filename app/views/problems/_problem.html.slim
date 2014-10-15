@@ -3,12 +3,14 @@
     = problem.title
 
   .list-group-item-text.clearfix
-    = Markdown.to_text(problem.description)
+    p.ellipsis
+      = Markdown.to_text(problem.description)
 
     .pull-right
       => problem.created_at
       => image_tag problem.owner_image_url
       = problem.owner_name
 
-    p
+    span
+      i.fa.fa-thumbs-up>
       = problem.users.count
