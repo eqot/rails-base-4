@@ -8,11 +8,11 @@ header.navbar.navbar-default role="navigation"
         span.icon-bar
       = link_to "probless", root_path, class: "navbar-brand"
 
-    .collapse.navbar-collapse id="bs-example-navbar-collapse-1"
+    .collapse.navbar-collapse#bs-example-navbar-collapse-1
       ul.nav.navbar-nav.navbar-right
         li
           .dropdown
-            button.btn.btn-default.dropdown-toggle type="button" id="dropdownMenu0" data-toggle="dropdown"
+            button.btn.btn-default.dropdown-toggle#dropdownMenu0 type="button" data-toggle="dropdown"
               | Submit
               span.caret<
             ul.dropdown-menu role="menu" aria-labelledby="dropdownMenu0"
@@ -22,7 +22,7 @@ header.navbar.navbar-default role="navigation"
         - if signed_in?
           li
             .dropdown
-              button.btn.btn-default.dropdown-toggle type="button" id="dropdownMenu1" data-toggle="dropdown"
+              button.btn.btn-default.dropdown-toggle#dropdownMenu1 type="button" data-toggle="dropdown"
                 = image_tag current_user.image_url
                 = current_user.name
                 span.caret<
@@ -32,10 +32,10 @@ header.navbar.navbar-default role="navigation"
         - else
           li
             .dropdown
-              button.btn.btn-success.dropdown-toggle type="button" id="dropdownMenu1" data-toggle="dropdown"
+              button.btn.btn-success.dropdown-toggle#dropdownMenu2 type="button" data-toggle="dropdown"
                 | Sign in
                 span.caret<
-              ul.dropdown-menu role="menu" aria-labelledby="dropdownMenu1"
+              ul.dropdown-menu role="menu" aria-labelledby="dropdownMenu2"
                 li role="presentation"
                   = link_to("/auth/google") do
                     i.fa.fa-google-plus>

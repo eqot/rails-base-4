@@ -21,9 +21,9 @@
           | Preview
 
     .tab-content
-      .tab-pane.fade.in.active id="write"
+      .tab-pane.fade.in.active#write
         = f.text_area :description, class: 'form-control', rows: 10
-      .tab-pane.fade id="preview"
+      .tab-pane.fade#preview
 
   => f.submit task, class: 'btn btn-primary', data: { disable_with: 'Processing...' }
   = link_to 'Cancel', problem, class: "btn btn-default"
