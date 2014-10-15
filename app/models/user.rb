@@ -1,14 +1,14 @@
 class User < ActiveRecord::Base
 
-  validates :provider, presence: true
-  validates :uid, presence: true, uniqueness: { scope: :provider }
-  validates :name, presence: true
-  validates :image_url, presence: true
-
   has_many :submitted_problems, class_name: 'Problem', foreign_key: :owner_id
 
   has_many :like_problems
   has_many :problems, through: :like_problems
+
+  validates :provider, presence: true
+  validates :uid, presence: true, uniqueness: { scope: :provider }
+  validates :name, presence: true
+  validates :image_url, presence: true
 
   def self.find_or_create_from_auth_hash(auth_hash)
     provider = auth_hash[:provider]
