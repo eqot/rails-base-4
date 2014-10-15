@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   resources :problems
+  resources :problems do
+    put :sort
+  end
+
   resources :users, only: :show
 
   root to: 'home#index'

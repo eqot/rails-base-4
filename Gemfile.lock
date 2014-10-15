@@ -152,6 +152,8 @@ GEM
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (5.0.1)
+      railties (>= 3.2.16)
     json (1.8.1)
     jwt (1.0.0)
     launchy (2.4.2)
@@ -245,6 +247,8 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.3.2)
+    ranked-model (0.4.0)
+      activerecord (>= 3.1.12)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
@@ -362,6 +366,7 @@ DEPENDENCIES
   hirb-unicode
   jbuilder (~> 2.0)
   jquery-rails
+  jquery-ui-rails
   launchy
   less-rails
   mysql2
@@ -374,6 +379,7 @@ DEPENDENCIES
   pry-rails
   rack-livereload
   rails (= 4.1.6)
+  ranked-model
   rb-fsevent
   rspec-collection_matchers
   rspec-rails

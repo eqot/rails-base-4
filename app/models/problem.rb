@@ -9,6 +9,9 @@ class Problem < ActiveRecord::Base
   belongs_to :owner, class_name: 'User'
   delegate :name, :image_url, to: :owner, prefix: true
 
+  include RankedModel
+  ranks :row_order
+
   validates :title, presence: true
   validates :owner_id, presence: true
 

@@ -42,11 +42,17 @@ class ProblemsController < ApplicationController
     redirect_to root_path, notice: 'Deleted'
   end
 
+  def sort
+    problem = Problem.find(params[:problem_id])
+    problem.update(problem_params)
+    render nothing: true
+  end
+
   private
 
   def problem_params
     params.require(:problem).permit(
-      :title, :description
+      :title, :description, :row_order_position
     )
   end
 
