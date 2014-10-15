@@ -1,0 +1,50 @@
+header.navbar.navbar-default role="navigation"
+  .container
+    .navbar-header
+      button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to "probless", root_path, class: "navbar-brand"
+
+    .collapse.navbar-collapse id="bs-example-navbar-collapse-1"
+      ul.nav.navbar-nav.navbar-right
+        li
+          .dropdown
+            button.btn.btn-default.dropdown-toggle type="button" id="dropdownMenu0" data-toggle="dropdown"
+              | Submit
+              span.caret<
+            ul.dropdown-menu role="menu" aria-labelledby="dropdownMenu0"
+              li role="presentation"
+                = link_to "Problem", new_problem_path
+
+        - if signed_in?
+          li
+            .dropdown
+              button.btn.btn-default.dropdown-toggle type="button" id="dropdownMenu1" data-toggle="dropdown"
+                = image_tag current_user.image_url
+                = current_user.name
+                span.caret<
+              ul.dropdown-menu role="menu" aria-labelledby="dropdownMenu1"
+                li role="presentation"
+                  = link_to "Sign out", logout_path
+        - else
+          li
+            .dropdown
+              button.btn.btn-success.dropdown-toggle type="button" id="dropdownMenu1" data-toggle="dropdown"
+                | Sign in
+                span.caret<
+              ul.dropdown-menu role="menu" aria-labelledby="dropdownMenu1"
+                li role="presentation"
+                  = link_to("/auth/google") do
+                    i.fa.fa-google-plus>
+                    | Google
+                li role="presentation"
+                  = link_to("/auth/github") do
+                    i.fa.fa-github>
+                    | GitHub
+                li role="presentation"
+                  = link_to("/auth/twitter") do
+                    i.fa.fa-twitter>
+                    | Twitter
