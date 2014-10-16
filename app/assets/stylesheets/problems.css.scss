@@ -11,3 +11,12 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.trash {
+  transition: transform 100ms;
+
+  &:hover {
+    color: red;
+    transform: scale(1.5);
+  }
+}
