@@ -3,7 +3,7 @@ class ProblemsController < ApplicationController
   before_action :authenticate
 
   def index
-    @problems = Problem.all
+    @problems = Problem.all.page(params[:page])
   end
 
   def new

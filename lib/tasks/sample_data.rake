@@ -27,7 +27,7 @@ def make_problems
     owner_id: user.id
   )
 
-  10.times do
+  100.times do
     Problem.create!(
       title: Faker::Lorem.sentence,
       description: Faker::Lorem.paragraph,

@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :problems
+
+  concern :paginatable do
+    get '(page/:page)', :action => :index, :on => :collection, :as => ''
+  end
+
+  resources :problems, :concerns => :paginatable
   resources :problems do
     put :sort
     delete :unlike

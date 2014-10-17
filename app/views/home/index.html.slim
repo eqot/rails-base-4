@@ -1,8 +1,13 @@
+ul
+  li
+    = link_to "See all problems", problems_path
+
 - if signed_in?
 
   = render "users/user"
 
 - else
+
   .page-header.clearfix
     h1 Problems
 
