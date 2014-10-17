@@ -45,6 +45,10 @@ gem 'slim-rails'
 # Use Raked model
 gem 'ranked-model'
 
+# Use kaminari
+gem 'kaminari'
+gem 'kaminari-bootstrap'
+
 # Use guard
 group :development do
   gem 'guard'
