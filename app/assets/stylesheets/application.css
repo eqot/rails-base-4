@@ -17,3 +17,11 @@
 footer hr {
   margin-bottom: 10px;
 }
+
+#logo {
+  color: #555;
+  font-weight: bold;
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-right: 8px;
+}
