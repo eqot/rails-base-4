@@ -9,6 +9,13 @@ header.navbar.navbar-default role="navigation"
       = link_to "probless", root_path, class: "navbar-brand"
 
     .collapse.navbar-collapse#bs-example-navbar-collapse-1
+
+      ul.nav.navbar-nav
+        li
+          = link_to "About", root_path
+        li
+          = link_to "Problems", problems_path
+
       ul.nav.navbar-nav.navbar-right
         li
           .dropdown
