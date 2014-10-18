@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   has_many :like_problems
   has_many :problems, through: :like_problems
 
+  has_many :rating_problems
+  has_many :rated_problems, through: :rating_problems
+
   validates :provider, presence: true
   validates :uid, presence: true, uniqueness: { scope: :provider }
   validates :name, presence: true

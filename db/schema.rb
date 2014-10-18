@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141015082620) do
+ActiveRecord::Schema.define(version: 20141018135630) do
 
   create_table "like_problems", force: true do |t|
     t.integer  "user_id"
@@ -34,6 +34,19 @@ ActiveRecord::Schema.define(version: 20141015082620) do
   end
 
   add_index "problems", ["owner_id"], name: "index_problems_on_owner_id", using: :btree
+
+  create_table "rating_problems", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "problem_id"
+    t.integer  "impact"
+    t.integer  "frequency"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rating_problems", ["problem_id"], name: "index_rating_problems_on_problem_id", using: :btree
+  add_index "rating_problems", ["user_id", "problem_id"], name: "index_rating_problems_on_user_id_and_problem_id", unique: true, using: :btree
+  add_index "rating_problems", ["user_id"], name: "index_rating_problems_on_user_id", using: :btree
 
   create_table "relationships", force: true do |t|
     t.integer  "relating_id"
