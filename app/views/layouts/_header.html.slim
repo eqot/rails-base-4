@@ -6,9 +6,16 @@ header.navbar.navbar-default role="navigation"
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      = link_to "probless", root_path, class: "navbar-brand"
+      = link_to "probless", root_path, class: "navbar-brand", id: "logo"
 
     .collapse.navbar-collapse#bs-example-navbar-collapse-1
+
+      ul.nav.navbar-nav
+        li
+          = link_to "About", root_path
+        li
+          = link_to "Problems", problems_path
+
       ul.nav.navbar-nav.navbar-right
         li
           .dropdown
