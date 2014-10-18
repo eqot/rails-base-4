@@ -38,6 +38,10 @@ class Problem < ActiveRecord::Base
     relationships.find_by(related_id: another_problem.id).destroy
   end
 
+  def rating?(user)
+    rating = rating_problems.find_by(user_id: user.id)
+  end
+
   def rate!(user, key, value)
     rating = rating_problems.find_or_create_by!(user_id: user.id)
 
