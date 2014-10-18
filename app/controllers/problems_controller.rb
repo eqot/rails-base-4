@@ -21,6 +21,7 @@ class ProblemsController < ApplicationController
 
   def show
     @problem = Problem.find(params[:id])
+    @rating = @problem.rating_problems.find_by(user_id: current_user.id)
   end
 
   def edit

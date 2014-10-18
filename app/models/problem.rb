@@ -12,6 +12,9 @@ class Problem < ActiveRecord::Base
   has_many :like_problems
   has_many :users, through: :like_problems
 
+  has_many :rating_problems
+  has_many :rated_users, through: :rating_problems, source: :user
+
   include RankedModel
   ranks :row_order
 
@@ -33,6 +36,23 @@ class Problem < ActiveRecord::Base
 
   def unrelate!(another_problem)
     relationships.find_by(related_id: another_problem.id).destroy
+  end
+
+  def rating?(user)
+    rating = rating_problems.find_by(user_id: user.id)
+  end
+
+  def rate!(user, key, value)
+    rating = rating_problems.find_or_create_by!(user_id: user.id)
+
+    case key
+    when :impact
+      rating.impact = value
+    when :frequency
+      rating.frequency = value
+    end
+
+    rating.save!
   end
 
 end

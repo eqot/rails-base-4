@@ -1,19 +1,24 @@
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
-    # make_users
+    make_users
     make_problems
+    make_rating_problems
     make_relationships
   end
 end
 
 def make_users
-  User.creaet!(
-    provider: "google",
-    uid: Faker::Number.number(8),
-    name: Faker::Name.name,
-    image_url: "https://lh5.googleusercontent.com/-XrwSVHny61A/AAAAAAAAAAI/AAAAAAAAIsI/Kgq5NrdjC1I/photo.jpg?sz=50"
-  )
+  User.all[1..-1].each { |u| u.delete }
+
+  3.times do
+    User.create!(
+      provider: "google",
+      uid: Faker::Number.number(8),
+      name: Faker::Name.name,
+      image_url: "https://lh5.googleusercontent.com/-XrwSVHny61A/AAAAAAAAAAI/AAAAAAAAIsI/Kgq5NrdjC1I/photo.jpg?sz=50"
+    )
+  end
 end
 
 def make_problems
@@ -39,6 +44,20 @@ def make_problems
   like_problems = problems[0..4]
   like_problems.each do |like_problem|
     user.like!(like_problem)
+  end
+end
+
+def make_rating_problems
+  RatingProblem.all.delete_all
+
+  users = User.all[0..3]
+  problems = Problem.all[0..3]
+
+  users.each do |user|
+    problems.each do |problem|
+      problem.rate!(user, :impact, rand(5) + 1)
+      problem.rate!(user, :frequency, rand(5) + 1)
+    end
   end
 end
 
