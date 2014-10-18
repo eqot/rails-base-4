@@ -13,7 +13,7 @@ class Problem < ActiveRecord::Base
   has_many :users, through: :like_problems
 
   has_many :rating_problems
-  has_many :ratings, through: :rating_problems
+  has_many :rated_users, through: :rating_problems, source: :user
 
   include RankedModel
   ranks :row_order
