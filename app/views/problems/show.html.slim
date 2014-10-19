@@ -2,8 +2,6 @@
   h2
     = @problem.title
 
-= render "rating"
-
 .panel.panel-default
   .panel-heading
     | Submitter
@@ -16,6 +14,12 @@
     | Description
   .panel-body
     = Markdown.to_html(@problem.description)
+
+.panel.panel-default
+  .panel-heading
+    | Rating
+  .panel-body
+    = render "rating"
 
 - if @problem.submitted_by?(current_user)
   => link_to 'Edit problem', edit_problem_path(@problem), class: 'btn btn-info'
