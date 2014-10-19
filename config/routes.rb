@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  # Resources
   concern :paginatable do
     get '(page/:page)', :action => :index, :on => :collection, :as => ''
   end
@@ -12,12 +13,15 @@ Rails.application.routes.draw do
 
   resources :users, only: :show
 
+  # Static pages
   root to: 'home#index'
   get '/about' => 'home#about'
 
+  # OAuth
   get '/auth/:provvider/callback' => 'sessions#create'
   get '/logout' => 'sessions#destroy', as: :logout
 
+  # Web APIs
   mount Markdown::API => '/'
 
   # The priority is based upon order of creation: first created -> highest priority.
