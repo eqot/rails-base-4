@@ -41,6 +41,11 @@ h2 {
   margin-top: 0;
 }
 
+abbr.timeago {
+  border-bottom: 0;
+  margin-right: 8px;
+}
+
 .list-group-item-text img {
   width: 18px;
 }
