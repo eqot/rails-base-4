@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :users, only: :show
 
   root to: 'home#index'
+  get '/about' => 'home#about'
+
   get '/auth/:provvider/callback' => 'sessions#create'
   get '/logout' => 'sessions#destroy', as: :logout
 
