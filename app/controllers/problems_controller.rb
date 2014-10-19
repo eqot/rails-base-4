@@ -13,6 +13,9 @@ class ProblemsController < ApplicationController
   def create
     @problem = current_user.submitted_problems.build(problem_params)
     if @problem.save
+      @problem.rate!(current_user, :impact, params[:problem][:impact])
+      @problem.rate!(current_user, :frequency, params[:problem][:frequency])
+
       redirect_to @problem, notice: 'Submitted'
     else
       render :new
