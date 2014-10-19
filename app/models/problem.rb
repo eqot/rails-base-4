@@ -10,7 +10,7 @@ class Problem < ActiveRecord::Base
   delegate :name, :image_url, to: :owner, prefix: true
 
   has_many :like_problems
-  has_many :users, through: :like_problems
+  has_many :liked_users, through: :like_problems, source: :user
 
   has_many :rating_problems
   has_many :rated_users, through: :rating_problems, source: :user

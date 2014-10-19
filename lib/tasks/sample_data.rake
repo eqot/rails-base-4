@@ -40,10 +40,13 @@ def make_problems
     owner_id: user.id
   )
 
+  users = User.all[0..3]
   problems = Problem.all
   like_problems = problems[95..-1]
-  like_problems.each do |like_problem|
-    user.like!(like_problem)
+  users.each do |user|
+    like_problems.each do |like_problem|
+      user.like!(like_problem)
+    end
   end
 end
 
