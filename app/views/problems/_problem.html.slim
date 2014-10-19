@@ -7,8 +7,7 @@
       = Markdown.to_text(problem.description)
 
     .pull-right
-      abbr.timeago title="#{problem.created_at.getutc.iso8601}"
-        = problem.created_at.to_s
+      = timeago(problem.created_at)
       => image_tag problem.owner_image_url
       = problem.owner_name
 
