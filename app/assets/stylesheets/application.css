@@ -25,3 +25,12 @@ footer hr {
   letter-spacing: -1px;
   margin-right: 8px;
 }
+
+h2 {
+  margin-top: 0;
+}
+
+.page-header {
+  margin: 0;
+  padding-bottom: 0;
+}
