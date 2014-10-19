@@ -1,0 +1,25 @@
+$STAR_SIZE: 16px;
+$CELL_SIZE: 20px;
+
+.rating {
+  // transform: scale(0.5);
+  // transform-origin: left top;
+
+  table td {
+    border: 2px solid;
+    margin: 0;
+    padding: 0;
+  }
+
+  td {
+    width: $CELL_SIZE;
+    height: $CELL_SIZE;
+    text-align: center;
+  }
+
+  .fa-star {
+    margin: 0;
+    font-size: $STAR_SIZE;
+    color: #e4de2b;
+  }
+}

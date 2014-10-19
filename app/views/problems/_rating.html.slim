@@ -1,6 +1,9 @@
-h4 Rating
-
-- if @rating
-  = @rating.impact
-  | ,
-  = @rating.frequency
+.rating
+  table
+    - for y in 1..5
+      tr
+        - for x in 1..5
+          - if @rating && @rating.impact == (6 - y) && @rating.frequency == x
+            td: i.fa.fa-star
+          - else
+            td
