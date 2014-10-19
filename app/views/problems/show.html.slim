@@ -20,6 +20,14 @@
   .panel-body
     = render "rating", rating: @rating
 
+.panel.panel-default
+  .panel-heading
+    | Like
+  .panel-body
+    - @problem.liked_users.each do |user|
+      = link_to "#{user.name}", user_path(user)
+      = user != @problem.liked_users.last ? ", " : ""
+
 - if @problem.submitted_by?(current_user)
   => link_to 'Edit problem', edit_problem_path(@problem), class: 'btn btn-info'
   = link_to 'Delete problem', problem_path(@problem), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?'}
