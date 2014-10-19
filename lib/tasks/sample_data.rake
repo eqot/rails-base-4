@@ -26,12 +26,6 @@ def make_problems
 
   Problem.all.delete_all
 
-  Problem.create!(
-    title: "Test",
-    description: "## Test\r\n\r\nThis is a test. :smile:\r\n\r\n```js\r\n    var foo = 0;\r\n    for (var i = 0; i < 10; i++) {\r\n        console.log(i);\r\n    }\r\n    return;\r\n```\r\n\r\n* a\r\n* b\r\n  * b-1\r\n  * b-2\r\n* c\r\n\r\nThis is a test.\r\nThis is also a test.\r\n\r\nWhat is this?\r\n\r\n![google](https://www.google.com/images/srpr/logo11w.png)\r\n",
-    owner_id: user.id
-  )
-
   100.times do
     Problem.create!(
       title: Faker::Lorem.sentence,
@@ -40,8 +34,14 @@ def make_problems
     )
   end
 
+  Problem.create!(
+    title: "Test",
+    description: "## Test\r\n\r\nThis is a test. :smile:\r\n\r\n```js\r\n    var foo = 0;\r\n    for (var i = 0; i < 10; i++) {\r\n        console.log(i);\r\n    }\r\n    return;\r\n```\r\n\r\n* a\r\n* b\r\n  * b-1\r\n  * b-2\r\n* c\r\n\r\nThis is a test.\r\nThis is also a test.\r\n\r\nWhat is this?\r\n\r\n![google](https://www.google.com/images/srpr/logo11w.png)\r\n",
+    owner_id: user.id
+  )
+
   problems = Problem.all
-  like_problems = problems[0..4]
+  like_problems = problems[95..-1]
   like_problems.each do |like_problem|
     user.like!(like_problem)
   end
