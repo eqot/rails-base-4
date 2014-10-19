@@ -25,5 +25,26 @@
         = f.text_area :description, class: 'form-control', rows: 10
       .tab-pane.fade#preview
 
+  .form-group
+    = f.label "Rating"
+    br
+    span.rating-label
+      | Impact
+    - for i in 1..5
+      label.checkbox-inline
+        - if rating && i == rating.impact
+          input(type="radio" name="problem[impact]" value="#{i}" checked)  #{i}
+        - else
+          input(type="radio" name="problem[impact]" value="#{i}")          #{i}
+    br
+    span.rating-label
+      | Frequency
+    - for i in 1..5
+      label.checkbox-inline
+        - if rating && i == rating.frequency
+          input(type="radio" name="problem[frequency]" value="#{i}" checked)  #{i}
+        - else
+          input(type="radio" name="problem[frequency]" value="#{i}")          #{i}
+
   => f.submit task, class: 'btn btn-primary', data: { disable_with: 'Processing...' }
   = link_to 'Cancel', problem, class: "btn btn-default"

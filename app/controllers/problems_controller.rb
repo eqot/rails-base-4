@@ -26,11 +26,15 @@ class ProblemsController < ApplicationController
 
   def edit
     @problem = current_user.submitted_problems.find(params[:id])
+    @rating = @problem.rating_problems.find_by(user_id: current_user.id)
   end
 
   def update
     @problem = current_user.submitted_problems.find(params[:id])
     if @problem.update(problem_params)
+      @problem.rate!(current_user, :impact, params[:problem][:impact])
+      @problem.rate!(current_user, :frequency, params[:problem][:frequency])
+
       redirect_to @problem, notice: 'Updated'
     else
       render :edit
