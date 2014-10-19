@@ -12,13 +12,14 @@ html
     = render partial: 'layouts/header'
 
     .container
-      - if flash[:notice]
-        .alert.alert-success
-          = flash[:notice]
-
-      - if flash[:alert]
-        .alert.alert-danger
-          = flash[:alert]
+      - flash.each do |key, value|
+        .alert.alert-dismissible class="#{bootstrap_class_for(key)}"
+          button.close type="button" data-dismiss="alert"
+            span aria-hidden="true"
+              | &times;
+            span.sr-only
+              | Close
+          = value
 
       = yield
 
