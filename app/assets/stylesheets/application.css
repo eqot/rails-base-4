@@ -37,8 +37,17 @@ button img {
   padding-bottom: 0;
 }
 
+.jumbotron h1 {
+  font-size: 40px;
+}
+
 h2 {
   margin-top: 0;
+}
+
+#about .fa {
+  font-size: 48px;
+  margin-left: 0.5em;
 }
 
 abbr.timeago {
