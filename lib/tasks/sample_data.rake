@@ -54,7 +54,7 @@ def make_rating_problems
   RatingProblem.all.delete_all
 
   users = User.all[0..3]
-  problems = Problem.all[0..3]
+  problems = Problem.all[97..-1]
 
   users.each do |user|
     problems.each do |problem|
