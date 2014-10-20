@@ -3,3 +3,31 @@
   = render "info"
 
 - else
+
+  .jumbotron
+    .container
+      h1 Let's minimize problems as less as possible!
+      p This web service is designed to seek big problems, think great solutions and solve problems with collaborators.
+      p
+        = link_to "Learn more »", about_path, class: "btn btn-primary btn-lg"
+
+  .container#about
+    .row
+      .col-md-4
+        .row
+          .col-md-1.col-md-offset-3
+            i.fa.fa-search
+        h3 Think from problems
+        p In order to truely focus on what users really want to solve, let's think about ideas from problems first, not from solutions.
+      .col-md-4
+        .row
+          .col-md-1.col-md-offset-3
+            i.fa.fa-comments-o
+        h3 Meet other ideas
+        p This is an idea database that problems and solutions can be inspired by others, and that might be eventually innovation.
+      .col-md-4
+        .row
+          .col-md-1.col-md-offset-3
+            i.fa.fa-group
+        h3 Solve problem together
+        p This is also a community that you can find collaborators who want to solve problem together.
