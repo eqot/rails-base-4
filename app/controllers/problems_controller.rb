@@ -1,6 +1,6 @@
 class ProblemsController < ApplicationController
 
-  before_action :authenticate
+  before_action :authenticate, except: [:index, :show]
 
   def index
     @problems = Problem.order('created_at DESC, id DESC').page(params[:page])
@@ -24,7 +24,10 @@ class ProblemsController < ApplicationController
 
   def show
     @problem = Problem.find(params[:id])
-    @rating = @problem.rating_problems.find_by(user_id: current_user.id)
+
+    if signed_in?
+      @rating = @problem.rating_problems.find_by(user_id: current_user.id)
+    end
   end
 
   def edit
