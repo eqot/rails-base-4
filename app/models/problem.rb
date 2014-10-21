@@ -15,6 +15,8 @@ class Problem < ActiveRecord::Base
   has_many :rating_problems
   has_many :rated_users, through: :rating_problems, source: :user
 
+  mount_uploader :file, FileUploader
+
   include RankedModel
   ranks :row_order
 

@@ -76,6 +76,9 @@ gem 'nokogiri'
 # Use Grape
 gem 'grape'
 
+# Use CarrierWave to upload file
+gem 'carrierwave'
+
 group :development, :test do
   # Use Pry
   gem 'pry-rails'

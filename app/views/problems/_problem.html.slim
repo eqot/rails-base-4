@@ -11,6 +11,10 @@
       => image_tag problem.owner_image_url
       = problem.owner_name
 
-    span
-      i.fa.fa-thumbs-up>
+    span.icon
+      i.fa.fa-thumbs-up
       = problem.liked_users.count
+
+    - if problem.file?
+      span.icon
+        i.fa.fa-file-text-o

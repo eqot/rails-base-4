@@ -4,6 +4,7 @@ class CreateProblems < ActiveRecord::Migration
       t.integer :owner_id
       t.string :title,       null: false
       t.text :description
+      t.string :file
       t.integer :row_order
 
       t.timestamps

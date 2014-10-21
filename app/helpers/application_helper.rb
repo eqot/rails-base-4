@@ -1,3 +1,5 @@
+require 'uri'
+
 module ApplicationHelper
 
   def timeago(time, options = {})
@@ -12,6 +14,10 @@ module ApplicationHelper
       when "alert"   then "alert-warning"
       when "error"   then "alert-danger"
     end
+  end
+
+  def filename(file)
+    URI.decode(File::basename(file.to_s))
   end
 
 end
