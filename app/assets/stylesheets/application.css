@@ -59,6 +59,10 @@ abbr.timeago {
   width: 18px;
 }
 
+input[type="checkbox"] {
+  margin-left: 16px;
+}
+
 footer hr {
   margin-bottom: 10px;
 }

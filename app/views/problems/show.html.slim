@@ -14,6 +14,13 @@
   .panel-body
     = Markdown.to_html(@problem.description)
 
+- if @problem.file?
+  .panel.panel-default
+    .panel-heading
+      | Attached file
+    .panel-body
+      = link_to filename(@problem.file), @problem.file.url
+
 .panel.panel-default
   .panel-heading
     | Rating

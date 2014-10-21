@@ -69,7 +69,7 @@ class ProblemsController < ApplicationController
 
   def problem_params
     params.require(:problem).permit(
-      :title, :description, :row_order_position
+      :title, :description, :file, :file_cache, :remove_file, :row_order_position
     )
   end
 

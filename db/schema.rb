@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20141018135630) do
     t.integer  "owner_id"
     t.string   "title",       null: false
     t.text     "description"
+    t.string   "file"
     t.integer  "row_order"
     t.datetime "created_at"
     t.datetime "updated_at"

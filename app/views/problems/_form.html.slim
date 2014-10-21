@@ -25,6 +25,16 @@
       .tab-pane.fade#preview
 
   .form-group
+    = f.label "Attached file"
+    - if problem.file?
+      div
+        = filename(problem.file)
+        => f.check_box :remove_file
+        | Remove this file
+    = f.file_field :file
+    = f.hidden_field :file_cache
+
+  .form-group
     = f.label "Rating"
     br
     span.rating-label
