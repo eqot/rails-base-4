@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     get '(page/:page)', :action => :index, :on => :collection, :as => ''
   end
 
-  resources :problems, :concerns => :paginatable
-  resources :problems do
+  resources :problems, controller: :ideas, type: 'Problem', :concerns => :paginatable
+  resources :ideas do
     put :sort
     delete :unlike
   end

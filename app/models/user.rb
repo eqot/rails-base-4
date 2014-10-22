@@ -1,12 +1,12 @@
 class User < ActiveRecord::Base
 
-  has_many :submitted_problems, class_name: 'Problem', foreign_key: :owner_id
+  has_many :submitted_ideas, class_name: 'Idea', foreign_key: :owner_id
 
-  has_many :like_problems
-  has_many :problems, through: :like_problems
+  has_many :like_ideas
+  has_many :ideas, through: :like_ideas
 
-  has_many :rating_problems
-  has_many :rated_problems, through: :rating_problems
+  has_many :rating_ideas
+  has_many :rated_ideas, through: :rating_ideas
 
   validates :provider, presence: true
   validates :uid, presence: true, uniqueness: { scope: :provider }
@@ -35,12 +35,12 @@ class User < ActiveRecord::Base
     end
   end
 
-  def like!(problem)
-    like_problems.create!(problem_id: problem.id)
+  def like!(idea)
+    like_ideas.create!(idea_id: idea.id)
   end
 
-  def unlike!(problem)
-    like_problems.find_by(problem_id: problem.id).destroy
+  def unlike!(idea)
+    like_ideas.find_by(idea_id: idea.id).destroy
   end
 
 end

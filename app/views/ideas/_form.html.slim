@@ -1,8 +1,8 @@
-= form_for(problem, class: 'form-horizontal', role: 'form') do |f|
-  - if problem.errors.any?
+= form_for(idea, class: 'form-horizontal', role: 'form') do |f|
+  - if idea.errors.any?
     .alert.alert-danger
       ul
-        - problem.errors.full_messages.each do |msg|
+        - idea.errors.full_messages.each do |msg|
           li #{msg}
 
   .form-group
@@ -26,9 +26,9 @@
 
   .form-group
     = f.label "Attached file"
-    - if problem.file?
+    - if idea.file?
       div
-        = filename(problem.file)
+        = filename(idea.file)
         => f.check_box :remove_file
         | Remove this file
     = f.file_field :file
@@ -42,18 +42,18 @@
     - for i in 1..5
       label.checkbox-inline
         - if rating && i == rating.impact
-          input(type="radio" name="problem[impact]" value="#{i}" checked)  #{i}
+          input(type="radio" name="idea[impact]" value="#{i}" checked)  #{i}
         - else
-          input(type="radio" name="problem[impact]" value="#{i}")          #{i}
+          input(type="radio" name="idea[impact]" value="#{i}")          #{i}
     br
     span.rating-label
       | Frequency
     - for i in 1..5
       label.checkbox-inline
         - if rating && i == rating.frequency
-          input(type="radio" name="problem[frequency]" value="#{i}" checked)  #{i}
+          input(type="radio" name="idea[frequency]" value="#{i}" checked)  #{i}
         - else
-          input(type="radio" name="problem[frequency]" value="#{i}")          #{i}
+          input(type="radio" name="idea[frequency]" value="#{i}")          #{i}
 
   => f.submit task, class: 'btn btn-primary', data: { disable_with: 'Processing...' }
-  = link_to 'Cancel', problem, class: "btn btn-default"
+  = link_to 'Cancel', idea, class: "btn btn-default"
