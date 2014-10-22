@@ -6,6 +6,7 @@ class CreateIdeas < ActiveRecord::Migration
       t.text :description
       t.string :file
       t.integer :row_order
+      t.string :type
 
       t.timestamps
     end

@@ -5,14 +5,16 @@
   .panel-heading
     | Submitter
   .panel-body
-    => image_tag @idea.owner_image_url
-    = @idea.owner_name
+    - if @idea.owner
+      => image_tag @idea.owner_image_url
+      = @idea.owner_name
 
 .panel.panel-default
   .panel-heading
     | Description
   .panel-body
-    = Markdown.to_html(@idea.description)
+    - if @idea.description?
+      = Markdown.to_html(@idea.description)
 
 - if @idea.file?
   .panel.panel-default

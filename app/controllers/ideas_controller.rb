@@ -1,9 +1,10 @@
 class IdeasController < ApplicationController
 
   before_action :authenticate, except: [:index, :show]
+  before_action :set_type
 
   def index
-    @ideas = Idea.order('created_at DESC, id DESC').page(params[:page])
+    @ideas = type_class.order('created_at DESC, id DESC').page(params[:page])
   end
 
   def new
@@ -71,6 +72,18 @@ class IdeasController < ApplicationController
     params.require(:idea).permit(
       :title, :description, :file, :file_cache, :remove_file, :row_order_position
     )
+  end
+
+  def set_type
+     @type = type
+  end
+
+  def type
+    Idea.types.include?(params[:type]) ? params[:type] : "Idea"
+  end
+
+  def type_class
+    type.constantize
   end
 
 end

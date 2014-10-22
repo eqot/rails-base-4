@@ -4,12 +4,14 @@
 
   .list-group-item-text.clearfix
     p.ellipsis
-      = Markdown.to_text(idea.description)
+      - if idea.description?
+        = Markdown.to_text(idea.description)
 
     .pull-right
       = timeago(idea.created_at)
-      => image_tag idea.owner_image_url
-      = idea.owner_name
+      - if idea.owner
+        => image_tag idea.owner_image_url
+        = idea.owner_name
 
     span.icon
       i.fa.fa-thumbs-up

@@ -23,6 +23,14 @@ class Idea < ActiveRecord::Base
   validates :title, presence: true
   validates :owner_id, presence: true
 
+  def self.types
+    %w(Problem)
+  end
+
+  def to_partial_path
+    'ideas/idea'
+  end
+
   def submitted_by?(user)
     return false unless user
     owner_id == user.id

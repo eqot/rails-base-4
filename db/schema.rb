@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20141018135630) do
     t.text     "description"
     t.string   "file"
     t.integer  "row_order"
+    t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
