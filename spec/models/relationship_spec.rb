@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Relationship do
 
-  let(:relating) { create(:problem) }
-  let(:related) { create(:problem) }
+  let(:relating) { create(:idea) }
+  let(:related) { create(:idea) }
   let(:relationship) { relating.relationships.build(related_id: related.id) }
 
   subject { relationship }

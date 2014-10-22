@@ -1,0 +1,44 @@
+.page-header
+  h2 #{@idea.title}
+
+.panel.panel-default
+  .panel-heading
+    | Submitter
+  .panel-body
+    - if @idea.owner
+      => image_tag @idea.owner_image_url
+      = @idea.owner_name
+
+.panel.panel-default
+  .panel-heading
+    | Description
+  .panel-body
+    - if @idea.description?
+      = Markdown.to_html(@idea.description)
+
+- if @idea.file?
+  .panel.panel-default
+    .panel-heading
+      | Attached file
+    .panel-body
+      = link_to filename(@idea.file), @idea.file.url
+
+.panel.panel-default
+  .panel-heading
+    | Rating
+  .panel-body
+    = render "rating", rating: @rating
+
+.panel.panel-default
+  .panel-heading
+    | Like
+  .panel-body
+    - @idea.liked_users.each do |user|
+      = link_to "#{user.name}", user_path(user)
+      = user != @idea.liked_users.last ? ", " : ""
+
+- if @idea.submitted_by?(current_user)
+  => link_to 'Edit idea', edit_idea_path(@idea), class: 'btn btn-info'
+  = link_to 'Delete idea', idea_path(@idea), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?'}
+
+/ = render "relating_idea", idea: @idea
