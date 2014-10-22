@@ -1,0 +1,20 @@
+= link_to(idea, class: "list-group-item list-item", data: { model_name: idea.class.name.underscore, update_url: idea_sort_path(idea), delete_url: idea_unlike_path(idea) })
+  h4.list-group-item-heading
+    = idea.title
+
+  .list-group-item-text.clearfix
+    p.ellipsis
+      = Markdown.to_text(idea.description)
+
+    .pull-right
+      = timeago(idea.created_at)
+      => image_tag idea.owner_image_url
+      = idea.owner_name
+
+    span.icon
+      i.fa.fa-thumbs-up
+      = idea.liked_users.count
+
+    - if idea.file?
+      span.icon
+        i.fa.fa-file-text-o

@@ -13,18 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20141018135630) do
 
-  create_table "like_problems", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "problem_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "like_problems", ["problem_id"], name: "index_like_problems_on_problem_id", using: :btree
-  add_index "like_problems", ["user_id", "problem_id"], name: "index_like_problems_on_user_id_and_problem_id", unique: true, using: :btree
-  add_index "like_problems", ["user_id"], name: "index_like_problems_on_user_id", using: :btree
-
-  create_table "problems", force: true do |t|
+  create_table "ideas", force: true do |t|
     t.integer  "owner_id"
     t.string   "title",       null: false
     t.text     "description"
@@ -34,20 +23,31 @@ ActiveRecord::Schema.define(version: 20141018135630) do
     t.datetime "updated_at"
   end
 
-  add_index "problems", ["owner_id"], name: "index_problems_on_owner_id", using: :btree
+  add_index "ideas", ["owner_id"], name: "index_ideas_on_owner_id", using: :btree
 
-  create_table "rating_problems", force: true do |t|
+  create_table "like_ideas", force: true do |t|
     t.integer  "user_id"
-    t.integer  "problem_id"
+    t.integer  "idea_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "like_ideas", ["idea_id"], name: "index_like_ideas_on_idea_id", using: :btree
+  add_index "like_ideas", ["user_id", "idea_id"], name: "index_like_ideas_on_user_id_and_idea_id", unique: true, using: :btree
+  add_index "like_ideas", ["user_id"], name: "index_like_ideas_on_user_id", using: :btree
+
+  create_table "rating_ideas", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "idea_id"
     t.integer  "impact"
     t.integer  "frequency"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "rating_problems", ["problem_id"], name: "index_rating_problems_on_problem_id", using: :btree
-  add_index "rating_problems", ["user_id", "problem_id"], name: "index_rating_problems_on_user_id_and_problem_id", unique: true, using: :btree
-  add_index "rating_problems", ["user_id"], name: "index_rating_problems_on_user_id", using: :btree
+  add_index "rating_ideas", ["idea_id"], name: "index_rating_ideas_on_idea_id", using: :btree
+  add_index "rating_ideas", ["user_id", "idea_id"], name: "index_rating_ideas_on_user_id_and_idea_id", unique: true, using: :btree
+  add_index "rating_ideas", ["user_id"], name: "index_rating_ideas_on_user_id", using: :btree
 
   create_table "relationships", force: true do |t|
     t.integer  "relating_id"

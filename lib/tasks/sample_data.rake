@@ -2,8 +2,8 @@ namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
     make_users
-    make_problems
-    make_rating_problems
+    make_ideas
+    make_rating_ideas
     make_relationships
   end
 end
@@ -21,45 +21,45 @@ def make_users
   end
 end
 
-def make_problems
+def make_ideas
   user = User.first
 
-  Problem.all.delete_all
+  Idea.all.delete_all
 
   100.times do
-    Problem.create!(
+    Idea.create!(
       title: Faker::Lorem.sentence,
       description: Faker::Lorem.paragraph,
       owner_id: user.id
     )
   end
 
-  Problem.create!(
+  Idea.create!(
     title: "Test",
     description: "## Test\r\n\r\nThis is a test. :smile:\r\n\r\n```js\r\n    var foo = 0;\r\n    for (var i = 0; i < 10; i++) {\r\n        console.log(i);\r\n    }\r\n    return;\r\n```\r\n\r\n* a\r\n* b\r\n  * b-1\r\n  * b-2\r\n* c\r\n\r\nThis is a test.\r\nThis is also a test.\r\n\r\nWhat is this?\r\n\r\n![google](https://www.google.com/images/srpr/logo11w.png)\r\n",
     owner_id: user.id
   )
 
   users = User.all[0..3]
-  problems = Problem.all
-  like_problems = problems[95..-1]
+  ideas = Idea.all
+  like_ideas = ideas[95..-1]
   users.each do |user|
-    like_problems.each do |like_problem|
-      user.like!(like_problem)
+    like_ideas.each do |like_idea|
+      user.like!(like_idea)
     end
   end
 end
 
-def make_rating_problems
-  RatingProblem.all.delete_all
+def make_rating_ideas
+  RatingIdea.all.delete_all
 
   users = User.all[0..3]
-  problems = Problem.all[97..-1]
+  ideas = Idea.all[97..-1]
 
   users.each do |user|
-    problems.each do |problem|
-      problem.rate!(user, :impact, rand(5) + 1)
-      problem.rate!(user, :frequency, rand(5) + 1)
+    ideas.each do |idea|
+      idea.rate!(user, :impact, rand(5) + 1)
+      idea.rate!(user, :frequency, rand(5) + 1)
     end
   end
 end
@@ -67,14 +67,14 @@ end
 def make_relationships
   Relationship.all.delete_all
 
-  problems = Problem.all
+  ideas = Idea.all
 
-  relating_problems = problems[0..3]
-  related_problems = problems[5..8]
+  relating_ideas = ideas[0..3]
+  related_ideas = ideas[5..8]
 
-  relating_problems.each do |relating_problem|
-    related_problems.each do |related_problem|
-      related_problem.relate!(relating_problem)
+  relating_ideas.each do |relating_idea|
+    related_ideas.each do |related_idea|
+      related_idea.relate!(relating_idea)
     end
   end
 end

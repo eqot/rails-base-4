@@ -14,7 +14,7 @@ header.navbar.navbar-default role="navigation"
         li
           = link_to "About", about_path
         li
-          = link_to "Problems", problems_path
+          = link_to "Problems", ideas_path
 
       ul.nav.navbar-nav.navbar-right
         li
@@ -24,7 +24,7 @@ header.navbar.navbar-default role="navigation"
               span.caret<
             ul.dropdown-menu role="menu" aria-labelledby="dropdownMenu0"
               li role="presentation"
-                = link_to "Problem", new_problem_path
+                = link_to "Problem", new_idea_path
 
         - if signed_in?
           li
