@@ -12,7 +12,7 @@ enableMakrdownPreview = ->
     }
 
     $.post('/api/v1/markdown', data).done (html) ->
-      $('#preview').html html
+      $('#markdown').html html
 
 $(document).on "ready page:load", ->
   showTimeAgo()

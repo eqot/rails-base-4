@@ -6,7 +6,7 @@
     | Submitter
   .panel-body
     - if @idea.owner
-      => image_tag @idea.owner_image_url
+      => image_tag @idea.owner_image_url, class: "gravatar"
       = @idea.owner_name
 
 .panel.panel-default

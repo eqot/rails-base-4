@@ -27,7 +27,7 @@
   margin-left: 6px;
 }
 
-button img {
+button .gravatar {
   width: 18px;
   margin-right: 4px;
 }
@@ -55,7 +55,7 @@ abbr.timeago {
   margin-right: 8px;
 }
 
-.list-group-item-text img {
+.list-group-item-text .gravatar {
   width: 18px;
 }
 
