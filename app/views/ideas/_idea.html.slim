@@ -10,7 +10,7 @@
     .pull-right
       = timeago(idea.created_at)
       - if idea.owner
-        => image_tag idea.owner_image_url
+        => image_tag idea.owner_image_url, class: "gravatar"
         = idea.owner_name
 
     span.icon
