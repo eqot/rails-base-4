@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
   has_many :rating_ideas
   has_many :rated_ideas, through: :rating_ideas
 
+  has_many :tags
+  has_many :attached_tags, through: :tags
+
   validates :provider, presence: true
   validates :uid, presence: true, uniqueness: { scope: :provider }
   validates :name, presence: true

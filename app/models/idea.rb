@@ -15,6 +15,9 @@ class Idea < ActiveRecord::Base
   has_many :rating_ideas
   has_many :rated_users, through: :rating_ideas, source: :user
 
+  has_many :tags
+  has_many :attached_tags, through: :tags
+
   mount_uploader :file, FileUploader
 
   include RankedModel
