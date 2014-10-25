@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   resources :users, only: :show
 
+  resources :tags, only: :index
+
   # Static pages
   root to: 'home#index'
   get '/about' => 'home#about'
