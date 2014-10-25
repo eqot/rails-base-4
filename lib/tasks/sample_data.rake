@@ -4,6 +4,7 @@ namespace :db do
     make_users
     make_ideas
     make_rating_ideas
+    make_tags
     make_relationships
   end
 end
@@ -61,6 +62,18 @@ def make_rating_ideas
       idea.rate!(user, :impact, rand(5) + 1)
       idea.rate!(user, :frequency, rand(5) + 1)
     end
+  end
+end
+
+def make_tags
+  tags = ['JavaScript', 'Java', 'C', 'C++', 'Objective-C', 'C#', 'Perl', 'Python', 'PHP'];
+
+  Tag.all.delete_all
+
+  tags.each do |tag|
+    Tag.create!(
+      name: tag
+    )
   end
 end
 
