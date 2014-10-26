@@ -32,7 +32,15 @@ enableAutoComplete = ->
         source: (request, response) ->
           term = extractLast request.term
           matchedTags = $.ui.autocomplete.filter tags, term
-          response matchedTags
+
+          existTags = splitString(request.term).slice 0, -1
+          hitTags = $.map matchedTags, (tag) ->
+            if existTags.indexOf(tag) is -1
+              return tag
+            else
+              return null
+
+          response hitTags
 
         focus: ->
           return false;
