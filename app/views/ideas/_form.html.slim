@@ -39,7 +39,8 @@
   .form-group
     = f.label "Tags"
     .tags
-    input(type="text" name="idea[tags]" class="form-control autocomplete")
+    input(type="text" class="form-control autocomplete")
+    = f.hidden_field :tags
 
   .form-group
     = f.label "Rating"

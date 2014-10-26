@@ -10,6 +10,9 @@ splitString = (val) ->
 extractLast = (term) ->
   splitString(term).pop()
 
+updateField = ->
+  $('#idea_tags').val attachedTags.join(' ')
+
 addTag = (tag) ->
   return unless tag
 
@@ -21,6 +24,8 @@ addTag = (tag) ->
     removeTag tagElement
 
   $('.tags').append tagElement
+
+  updateField()
 
 createTagElement = (tag, callback) ->
   tagElement = $('<span class="label label-info">').text(tag).val(tag)
@@ -40,6 +45,8 @@ removeTag = (tagElement) ->
     attachedTags.splice index, 1
 
   tagElement.remove()
+
+  updateField()
 
 enterTag = (tag) ->
   elements = $('.autocomplete')
