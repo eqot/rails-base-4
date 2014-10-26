@@ -2,7 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-
 splitString = (val) ->
   val.split(/,\s*/)
 
@@ -13,7 +12,7 @@ enableAutoComplete = ->
   $.ui.autocomplete.filter = (array, term) ->
     matcher = new RegExp '^' + $.ui.autocomplete.escapeRegex(term), 'i'
     return $.grep array, (value) ->
-      return matcher.test(value.label || value.value || value)
+      return matcher.test value.label || value.value || value
 
   elements = $('.autocomplete')
   if elements.length > 0
