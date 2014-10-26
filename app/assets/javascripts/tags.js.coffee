@@ -43,7 +43,7 @@ enableAutoComplete = ->
           response hitTags
 
         focus: ->
-          return false;
+          return false
 
         select: (event, ui) ->
           terms = splitString this.value
