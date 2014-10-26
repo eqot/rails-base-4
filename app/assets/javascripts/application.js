@@ -14,6 +14,7 @@
 //= require jquery.timeago
 //= require jquery_ujs
 //= require jquery-ui/sortable
+//= require jquery-ui/autocomplete
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .

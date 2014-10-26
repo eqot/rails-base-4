@@ -70,7 +70,7 @@ class IdeasController < ApplicationController
 
   def idea_params
     params.require(:idea).permit(
-      :title, :description, :file, :file_cache, :remove_file, :row_order_position
+      :title, :description, :attached_tags, :file, :file_cache, :remove_file, :row_order_position
     )
   end
 

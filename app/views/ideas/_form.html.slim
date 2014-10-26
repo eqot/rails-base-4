@@ -37,6 +37,10 @@
     = f.hidden_field :file_cache
 
   .form-group
+    = f.label "Tags"
+    input(type="text" name="idea[tags]" class="form-control autocomplete")
+
+  .form-group
     = f.label "Rating"
     br
     span.rating-label
