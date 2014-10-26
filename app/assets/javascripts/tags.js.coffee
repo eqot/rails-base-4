@@ -55,5 +55,21 @@ enableAutoComplete = ->
 
         autoFocus: true
 
+createTagElement = (label, callback) ->
+  tagElement = $('<span class="label label-info">').text(label).val(label)
+
+  closeElement = $('<button type="button" class="close tag-close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>')
+  closeElement.click ->
+    tag = $(this).parent()
+    callback?(tag)
+    tag.remove()
+
+  tagElement.append closeElement
+
+  return tagElement
+
 $(document).on 'ready page:load', ->
   enableAutoComplete()
+
+  $('.tags').append createTagElement 'test3', (tag) ->
+    console.log tag.val()
