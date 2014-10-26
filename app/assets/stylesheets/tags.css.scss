@@ -4,10 +4,14 @@
 
 .tags {
   margin-bottom: 8px;
-}
 
-button.tag-close {
-  float: none;
-  font-size: 16px;
-  margin-left: 4px;
+  span.label {
+    margin-right: 6px;
+  }
+
+  button.tag-close {
+    float: none;
+    font-size: 16px;
+    margin-left: 4px;
+  }
 }
