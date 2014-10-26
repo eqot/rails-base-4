@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018135630) do
+ActiveRecord::Schema.define(version: 20141025225242) do
 
   create_table "ideas", force: true do |t|
     t.integer  "owner_id"
@@ -60,6 +60,18 @@ ActiveRecord::Schema.define(version: 20141018135630) do
   add_index "relationships", ["related_id"], name: "index_relationships_on_related_id", using: :btree
   add_index "relationships", ["relating_id", "related_id"], name: "index_relationships_on_relating_id_and_related_id", unique: true, using: :btree
   add_index "relationships", ["relating_id"], name: "index_relationships_on_relating_id", using: :btree
+
+  create_table "tags", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "idea_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tags", ["idea_id"], name: "index_tags_on_idea_id", using: :btree
+  add_index "tags", ["user_id", "idea_id"], name: "index_tags_on_user_id_and_idea_id", unique: true, using: :btree
+  add_index "tags", ["user_id"], name: "index_tags_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "provider",   null: false
