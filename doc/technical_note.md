@@ -47,6 +47,6 @@
   * [Add callback to problem factory for owner](https://github.com/eqot/rails-base-4/commit/1bbcb4e7b6afad65c331bb4f498114275803083e)
 
 
-### Missing peaces
+### Missing pieces
 
 * Account management like Devise
